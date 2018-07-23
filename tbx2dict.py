@@ -3,7 +3,7 @@ from collections import defaultdict
 from pathlib import Path
 from tqdm import tqdm
 
-# List of all languages in the IATE term base
+# List of all languages in the term base
 full_lang = [
     'bg', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'fi', 'fr', 'ga', 'hr',
     'hu', 'it', 'la', 'lt', 'lv', 'mt', 'mul', 'nl', 'pl', 'pt', 'ro', 'sk',
@@ -11,9 +11,7 @@ full_lang = [
 ]
 
 
-def tbx2dict(lang_list=full_lang,
-             lang_src='en',
-             src_file='data/IATE_export_29012018.tbx'):
+def tbx2dict(src_file, lang_list=full_lang, lang_src='en'):
     """ Read TermBase eXchange files as Python multiligual dict
 
     Arguments:
