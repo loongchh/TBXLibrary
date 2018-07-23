@@ -1,7 +1,7 @@
 tbx2dict
 --------
 
-This script reads a TermBase eXchange (TBX) to a multi-lingual Python
+This script reads a [TermBase eXchange (TBX)](https://en.wikipedia.org/wiki/TermBase_eXchange) to a multi-lingual Python
 dictionary. By specifying a XML file in the TBX format, the function obtains:
 
 - **entry**: A list of term entries in the specified source language.
