@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
-from tqdm import tqdm
 
 # List of all languages in the term base
 full_lang = [
