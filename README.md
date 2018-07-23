@@ -15,5 +15,5 @@ language translation given the source term (in the source language).
 Notably, the `ent_dict` only includes terms of which there is entry in the
 source langauge.
 
-I wrote and published this simple function since I didn't find Python packages
-dealingwith the TBX format on GitHub.
+I wrote and published this simple function since I wasn't able to find Python
+packages dealing with TBX formats on GitHub.
