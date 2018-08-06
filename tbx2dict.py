@@ -1,13 +1,14 @@
-# tbx2dict.py - Read TermBase eXchange files as Python multiligual dict
+"""tbx2dict.py - Read TermBase eXchange files as Python multiligual dict
 
-# Written in 2018 by Long-Huei Chen <longhuei@g.ecc.u-tokyo.ac.jp>
+Written in 2018 by Long-Huei Chen <longhuei@g.ecc.u-tokyo.ac.jp>
 
-# To the extent possible under law, the author(s) have dedicated all copyright
-# and related and neighboring rights to this software to the public domain
-# worldwide. This software is distributed without any warranty.
+To the extent possible under law, the author(s) have dedicated all copyright
+and related and neighboring rights to this software to the public domain
+worldwide. This software is distributed without any warranty.
 
-# You should have received a copy of the CC0 Public Domain Dedication along
-# with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+You should have received a copy of the CC0 Public Domain Dedication along
+with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+"""
 
 import xml.etree.ElementTree as ET
 from collections import defaultdict
