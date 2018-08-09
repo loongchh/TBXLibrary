@@ -29,12 +29,10 @@ def tbx2dict(src_file, lang_list, src_lang='en'):
             terms to another language. ent_dict[lang] is a dictionary of a
             particular language
     """
-    print('Reading TBX file...')
     tree = ET.parse(src_file)
     root = tree.getroot()
     ent_dict = defaultdict(dict)
 
-    print('Processing entries...')
     for term in root[1][0].iter('termEntry'):
         src_ent = None
         for term_lang in term.iter('langSet'):
