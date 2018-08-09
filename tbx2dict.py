@@ -13,9 +13,10 @@ with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
+from tqdm import tqdm
 
 
-def tbx2dict(src_file, lang_list, src_lang='en'):
+def tbx2dict(src_file, lang_list, src_lang='en', progressbar=False):
     """ Read TermBase eXchange files as Python multiligual dict
 
     Arguments:
@@ -33,6 +34,9 @@ def tbx2dict(src_file, lang_list, src_lang='en'):
     root = tree.getroot()
     ent_dict = defaultdict(dict)
 
+    if progressbar:
+        pbar = tqdm(total=sum(1 for _ in root[1][0].iter('termEntry')))
+
     for term in root[1][0].iter('termEntry'):
         src_ent = None
         for term_lang in term.iter('langSet'):
@@ -48,4 +52,9 @@ def tbx2dict(src_file, lang_list, src_lang='en'):
             if lang in lang_list and lang != src_lang:
                 ent_dict[lang][src_ent] = term_lang[0][0].text
 
+        if progressbar:
+            pbar.update(1)
+
+    if progressbar:
+        pbar.close()
     return ent_dict
